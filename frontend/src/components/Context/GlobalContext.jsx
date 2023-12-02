@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 export const MyContext = createContext();
 
@@ -21,6 +21,9 @@ const GlobalContext = ({ children }) => {
     const initialState = { counter: 9876 };
 
     const [state, dispatch] = useReducer(reducer, initialState)
+    
+   
+
 
     return (
         <MyContext.Provider value={{ state, dispatch }}>

@@ -10,7 +10,7 @@ import Effect2 from './components/13-09/Effect2';
 import Effect3 from './components/13-09/Effect3';
 import Effect4 from './components/13-09/Effect4';
 import Params from './components/params';
-import SingleProduct from './components/singleproduct';
+// import SingleProduct from './components/singleproduct';
 import Counterse from './components/counterse';
 import Mapping from './components/mapping';
 import Ternary from './components/13-09/Ternary';
@@ -31,9 +31,12 @@ import CustomHookLS from './components/13-10/CustomHookLS';
 import CustomHook from './components/13-10/CustomHook';
 import { NewTodo } from './components/NewTodo';
 import NewTodo2 from './components/NewTodo2';
+import YourProducts from './components/13-09/YourProducts';
+import UpdateProduct from './components/13-09/UpdateProduct'
 
 
 function App() {
+
   return (
     <div className="App">
       <Routes>
@@ -47,7 +50,7 @@ function App() {
         <Route exact path='/effect3' element={<Effect3 />} />
         <Route exact path='/effect4' element={<Effect4 />} />
         <Route exact path='/params' element={<Params />} />
-        <Route exact path='/singleproduct' element={<SingleProduct />} />
+        {/* <Route exact path='/singleproduct' element={<SingleProduct />} /> */}
         <Route exact path='/counterese' element={<Counterse />} />
         <Route exact path='/mapping' element={<Mapping names={['shifa','xyz','abc','pqr']}/>} />
         <Route exact path='/ternary' element={<Ternary />} />
@@ -68,9 +71,10 @@ function App() {
         {/* <Route exact path='/globalcontext' element={<GlobalContext />} /> */}
         <Route exact path='/custom-hook' element={<CustomHook />} />
         <Route exact path='/nt' element={<NewTodo />} />
-
+        <Route exact path='/yourproducts' element={<YourProducts/>}/>
         <Route exact path='/custom-hook-ls' element={<CustomHookLS />} />
         <Route exact path='/nt2' element={<NewTodo2/>}/>
+        <Route exact path='/updateproduct/:id' element={<UpdateProduct/>}/>
 
 
 

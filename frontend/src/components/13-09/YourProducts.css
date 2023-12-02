@@ -1,0 +1,16 @@
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+   /* Adjust as needed */
+}
+
+.product {
+  width: calc(20% - 10px); /* Adjust the width and margin as needed */
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  /* Additional styling for your products */
+  border: 1px solid #ccc;
+  padding: 10px
+}
