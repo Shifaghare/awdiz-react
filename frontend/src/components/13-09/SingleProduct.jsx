@@ -1,26 +1,25 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import './SingleProductNew.css';
-import api from '../../helpers/AxiosConfig';
-import { AuthContext } from '../Context/AuthContext';
-import toast from 'react-hot-toast';
+import axios from "axios"
+import { useContext, useEffect, useState } from "react"
+import toast from "react-hot-toast"
+import { useNavigate, useParams } from "react-router-dom"
+import { AuthContext } from "../Context/AuthContext"
+import api from "../../helpers/AxiosConfig"
 
-const SingleProductNew = () => {
-    const [productData, setProductData] = useState({});
-    // console.log(productData, "productData")
-    const { id } = useParams();
+function SingleProduct() {
+    const {id} = useParams();
+    const [product, setProduct] = useState([]);
+    const router = useNavigate();
     const { state } = useContext(AuthContext);
 
-    async function Cart(id) {
+    const addToCart = async (id) => {
         if (state.user.id && id) {
             try {
-                const response = await api.post("/user/add-cart", { userId: state.user.id, productId: id })
+                const response = await api.post("/user/cart", { userId: state.user.id, productId: id })
                 if (response.data.success) {
                     toast.success(response.data.message)
                 }
             } catch (error) {
-                console.log(error)
+                toast.error(error.message);
             }
         } else {
             toast.error("Please login to add product to cart.")
@@ -28,47 +27,48 @@ const SingleProductNew = () => {
     }
 
     useEffect(() => {
-        async function getSingleProductData() {
-            try {
-                const { data } = await api.get(`/product/get-single-product?id=${id}`)
-                if (data.success) {
-                    setProductData(data.product)
+        async function getProductDetails(){
+            try{
+                const { data } = await api.get(`/product/getsingleproduct?id=${id}`);
+                if(data.success){
+                    setProduct(data.product);
                 }
-            } catch (error) {
-                console.log(error)
+            }catch(error){
+                toast.error(error.response.data.message);
             }
+            
         }
-        if (id) {
-            getSingleProductData();
+        if(id){
+            getProductDetails();
         }
-    }, [id])
+    },[id]);
 
-    console.log(productData, "productData")
+    function backToProducts(){
+        router('/products');
+    }
 
     return (
-        <div>
-            {productData?._id ?
-                <div id='parentDiv'>
-                    <div className='blackborder w-40' >
-                        <img style={{ width: "60%", height: "85%" }} src={productData.image} />
-                    </div>
-                    <div className='blackborder w-40' >
-                        <h1>{productData.name}</h1>
-                        <h4>Category : {productData.category}</h4>
-                        {/* <h4>Description : {productData.description}</h4> */}
-                        <h4>Price : {productData.price}$</h4>
-                        {/* <h4>Rating : {productData.rating.rate}</h4> */}
-                        {/* <h4>Number of ratings : {productData.rating.count}</h4> */}
-                        {/* <i class="fa-brands fa-instagram"></i> */}
-
-                        <button onClick={() => Cart(productData._id)}>Cart</button>
-                    </div>
-                </div>
-                :
-                <div>Loading..</div>
-            }
+        <div className='product-container'>
+        <div className='product-image-div black-border'>
+            <img src={product.image}/>
         </div>
-    )
+        <div className='product-info-div black-border'>
+            <h2>{product.name}</h2>
+            {/* <h4 className='product-rating'>Rating ({product.rating.count}) : <span>{product.rating.rate}</span></h4> */}
+            {/* <h4 className='product-rating'>Rating ({productRatingCount}) : <span>{productRating}</span></h4> */}
+            <br/>
+            <div>
+                <h2>${product.price}</h2>
+                <button className='add-to-cart-btn' onClick={() => {addToCart(id)}}>Add to cart</button>
+            </div>
+            <br/>
+            <h4>{product.category}</h4>
+            <button className='back-button' onClick={backToProducts}>Back to products</button>
+        </div>
+    </div>
+  )
 }
+    
 
-export default SingleProductNew
+
+export default SingleProduct

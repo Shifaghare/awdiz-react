@@ -26,17 +26,34 @@ const YourProducts = () => {
     }
    
 
+    async function deleteProduct(id){
+        // alert(id)
+        try{  
+            const response = await api.delete('product/deleteproduct' , {params : {id}})
+            if(response.data.success){
+                toast.success(response.data.message)
+                getYourProduct();
+            }
+        }catch(error){
+            console.log(error)
+            toast.error(error?.response.data.message)
+        }
+    }
+
+
     // async function deleteProduct(id){
-    //     // alert(id)
-    //     try{  
-    //         const response = await api.delete('product/deleteproduct' , {params : {id}})
+    //     try{
+    //         const response=await api.post('/product/deleteproduct',{params : {id}})
     //         if(response.data.success){
     //             toast.success(response.data.message)
-    //             getYourProduct();
+
+                
     //         }
-    //     }catch(error){
-    //         console.log(error)
+
+    //     } 
+    //     catch(error){
     //         toast.error(error?.response.data.message)
+
     //     }
     // }
 
@@ -60,12 +77,12 @@ const YourProducts = () => {
         {yourProducts.map((pro)=>(
             <div class='product' key={pro._id}>
                 <div style={{height:"250px"}}>
-                    <img src={pro.image} alt="" />
+                    <img style={{height:'180px'}} src={pro.image} alt="" />
                 </div>
                 <div style={{color:'black'}}>{pro.name}</div>
                 <div style={{color:'black'}}> $ {pro.price}</div>
                 <button onClick={()=>router(`/updateproduct/${pro._id}`)}>Update</button>
-                <button>delete</button>
+                <button onClick={()=>deleteProduct(pro._id)}>Delete</button>
  
 
             </div>

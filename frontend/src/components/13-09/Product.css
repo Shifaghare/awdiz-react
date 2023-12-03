@@ -1,0 +1,39 @@
+.product-container{
+    display: flex;
+    justify-content: space-around;
+}
+.product-container > div{
+    width: 40%;
+    height: 500px;
+}
+
+.product-image-div img{
+    height: 70%;
+    width: 50%;
+    padding-top: 10%;
+}
+
+.product-rating{
+    text-align: left;
+    margin-left: 10%;
+}
+
+.add-to-cart-btn{
+    height: 3em;
+    width: 30%;
+    border-radius: 1em;
+    font-weight: 700;
+    background-color: lightblue;
+}
+
+.add-to-cart-btn:hover{
+    cursor: pointer;
+}
+
+.back-button:hover{
+    cursor: pointer;
+}
+
+.black-border{
+    border: 5px solid black;
+}

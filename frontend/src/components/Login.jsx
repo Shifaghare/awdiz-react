@@ -45,19 +45,69 @@ function Login() {
             alert("Please fill the all values..")
         }
     }
+    const styles = {
+
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop:'50px',
+        height: '100vh',
+      },
+      box: {
+        width: '300px',
+        padding: '20px',
+        backgroundColor: '#ffffff',
+        borderRadius: '10px',
+        boxShadow: '10px 14px 18px 10px rgba(0, 0, 0, 0.1)',
+      },
+      heading: {
+        fontFamily: 'Arial, sans-serif',
+        fontSize: '1.5em',
+        color: '#3498db',
+        marginBottom: '20px',
+      },
+      form: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      label: {
+        marginBottom: '5px',
+        color: '#555',
+      },
+      input: {
+        width: '100%',
+        padding: '10px',
+        marginBottom: '15px',
+        border: '1px solid #ddd',
+        borderRadius: '5px',
+        boxSizing: 'border-box',
+      },
+      submitButton: {
+        backgroundColor: '#3498db',
+        color: 'white',
+        padding: '10px',
+        borderRadius: '5px',
+        cursor: 'pointer',
+      },
+    };
+    
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={sendDataToBackend}>
-                <label>Email :</label><br />
-                <input name='email' type='email' onChange={handleChange} /> <br />
-                <label>Password :</label><br />
-                <input name='password' type='password' onChange={handleChange} /> <br />
-                <input type='submit' value="Login here" /> <br />
-            </form>
+        <div style={styles.container}>
+        <div style={styles.box}>
+          <h1 style={styles.heading}>Login</h1>
+          <form onSubmit={sendDataToBackend} style={styles.form}>
+            <label style={styles.label}>Email :</label>
+            <input name='email' type='email' onChange={handleChange} style={styles.input} />
+            <label style={styles.label}>Password :</label>
+            <input name='password' type='password' onChange={handleChange} style={styles.input} />
+            <input type='submit' value="Login here" style={styles.submitButton} />
+          </form>
         </div>
-    )
-}
+      </div>
+    );
+  };
 
 export default Login;
