@@ -51,7 +51,7 @@ function App() {
         <Route exact path='/effect3' element={<Effect3 />} />
         <Route exact path='/effect4' element={<Effect4 />} />
         <Route exact path='/params' element={<Params />} />
-        <Route exact path='/getsingleproduct' element={<SingleProduct />} />
+        <Route exact path='/singleproduct/:id' element={<SingleProduct />} />
         <Route exact path='/counterese' element={<Counterse />} />
         <Route exact path='/mapping' element={<Mapping names={['shifa','xyz','abc','pqr']}/>} />
         <Route exact path='/ternary' element={<Ternary />} />

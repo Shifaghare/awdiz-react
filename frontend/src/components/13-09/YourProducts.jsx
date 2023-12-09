@@ -4,6 +4,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import api from '../../helpers/AxiosConfig'
 import './YourProducts.css'
+import { FaCartPlus } from 'react-icons/fa'
 
 const YourProducts = () => {
     const router = useNavigate()
@@ -70,10 +71,46 @@ const YourProducts = () => {
     
   return (
     <div>
-        
-        <h1>All Products</h1>
+          <ul style={{ listStyleType: 'none', margin: '0px 1px 10px 1px', padding: 0, backgroundColor: '#333', overflow: 'hidden' }}>
+      <li style={{ float: 'left' }}>                            
+        <a href="/" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+          Home
+        </a>
+      </li>
+      <li style={{ float: 'left' }}>
+        <a href="yourproducts" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+          Your Products
+        </a>
+      </li>
+      <li style={{ float: 'left' }}>
+        <a href="/addproduct" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+          Add Product
+        </a>
+      </li>
+      <li style={{ float: 'right' }}>
+        <a href="/addproduct" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+          Profile
+
+        </a>
+      </li>
+      <li style={{ float: 'right' }}>
+        <a href="/products" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+          All Products
+
+        </a>
+      </li>
+      <li style={{ float: 'right' }}>
+        <a href="/cart" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+      Cart
+      <FaCartPlus style={{fontSize:'13px'}}/>
+
+        </a>
+      </li>
+      
+    </ul>
+        <h1>Your Products</h1>
        <div >
-       {yourProducts?.length ? <div class='product-container'>
+       {yourProducts?.length ? <div style={{display:'flex',flexWrap:'wrap'}}>
         {yourProducts.map((pro)=>(
             <div class='product' key={pro._id}>
                 <div style={{height:"250px"}}>

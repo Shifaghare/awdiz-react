@@ -13,7 +13,6 @@ const Register2 = () => {
     // console.log(event.target.value, "value", event.target.name, "name")
     setUserData({ ...userData, [event.target.name]: event.target.value })
   }
-
   const sendDataToBackend = async (event) => {
     event.preventDefault();
     // alert("Data submitted to backend..")

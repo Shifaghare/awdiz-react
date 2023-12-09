@@ -5,11 +5,12 @@
 .product-container > div{
     width: 40%;
     height: 500px;
+    margin-top: 30px;
 }
 
 .product-image-div img{
-    height: 70%;
-    width: 50%;
+    height: 60%;
+    width: 40%;
     padding-top: 10%;
 }
 
@@ -23,17 +24,25 @@
     width: 30%;
     border-radius: 1em;
     font-weight: 700;
-    background-color: lightblue;
+    background-color: rgb(230, 173, 174);
 }
 
 .add-to-cart-btn:hover{
     cursor: pointer;
+    background-color: rgb(104, 138, 40);
 }
 
 .back-button:hover{
     cursor: pointer;
+    background-color: rgb(73, 75, 78);
+    color: rgb(239, 228, 228);
+}
+.back-button{
+    cursor: pointer;
+    background-color: rgb(88, 129, 116);
+    color: rgb(239, 228, 228);
 }
 
 .black-border{
-    border: 5px solid black;
+    border: 2px  solid black;
 }
