@@ -1,4 +1,3 @@
-import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import toast from "react-hot-toast"
 import { useNavigate, useParams } from "react-router-dom"
@@ -91,7 +90,7 @@ function SingleProduct() {
         <div className='product-container'>
             
         <div className='product-image-div black-border'>
-            <img src={product.image}/>
+            <img src={product.image} alt=""/>
         </div>
         <div className='product-info-div black-border'>
             <h2>{product.name}</h2>

@@ -1,7 +1,5 @@
 import { useContext } from "react";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { MyContext } from "./Context/GlobalContext";
 import { AuthContext } from "./Context/AuthContext";
 
 function Homepage() {

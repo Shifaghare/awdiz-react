@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 import api from '../../helpers/AxiosConfig'
 import { AuthContext } from '../Context/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import {FaCart, FaCartPlus, FaImage } from 'react-icons/fa';
+import { FaCartPlus } from 'react-icons/fa';
 
 const AddProduct = () => {
 
@@ -60,7 +60,7 @@ const AddProduct = () => {
         </a>
       </li>
       <li style={{ float: 'left' }}>
-        <a href="yourproducts" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+        <a href="/yourproducts" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
           Your Products
         </a>
       </li>
