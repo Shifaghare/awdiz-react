@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 
 const PageNotFound = () => {
+    
     const rout = useNavigate();
     const [time, setTime] = useState(5);
 
