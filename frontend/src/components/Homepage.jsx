@@ -74,7 +74,7 @@ function Homepage() {
         <h1 style={styles.heading}>User: {state?.user?.name}</h1>
       <button style={styles.button} onClick={routerToLogin}>Login</button>
       <button style={styles.button} onClick={Logout}>Logout</button><br />
-      <button style={styles.button} onClick={() => router('/register')}>Register Here</button><br /><br />
+      <button style={styles.button} onClick={() => router('/register2')}>Register Here</button><br /><br />
         
       </div>
     </div>
