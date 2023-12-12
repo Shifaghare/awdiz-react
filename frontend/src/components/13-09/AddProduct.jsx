@@ -76,7 +76,7 @@ const AddProduct = () => {
         </a>
       </li>
       <li style={{ float: 'right' }}>
-        <a href="/products" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
+        <a href="/Products" style={{ display: 'block', color: 'white', textAlign: 'center', padding: '14px 16px', textDecoration: 'none' }}>
           All Products
 
         </a>
