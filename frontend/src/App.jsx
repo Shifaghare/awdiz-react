@@ -43,7 +43,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route exact path='/login' element={<Login />} />
-        <Route exact path='/register' element={<Register />} />
+        {/* <Route exact path='/register' element={<Register />} /> */}
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/counter' element={<Counter />} />
         <Route exact path='/effect1' element={<Effect1 />} />
@@ -62,7 +62,7 @@ function App() {
         <Route exact path='/login2' element={<Login2 />} />
         <Route exact path='/addproduct' element={<AddProduct />} />
         <Route exact path='/childrenprop' element={<ChildrenProp />} />
-        <Route exact path='/register2' element={<Register2 />} />
+        <Route exact path='/register' element={<Register2 />} />
         <Route exact path='/memo' element={<UseMemo />} />
         <Route exact path='/todo' element={<Todos/>}/>
         <Route exact path='/usecallback' element={<UseCallback/>}/>
